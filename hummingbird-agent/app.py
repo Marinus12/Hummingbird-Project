@@ -12,6 +12,7 @@ from flask_cors import CORS
 from agents.hummingbird_agent import run_latency_adjusted_backtest
 from tools.latency_estimator import compare_locations
 import io
+import os
 import base64
 import matplotlib
 matplotlib.use("Agg")
@@ -149,5 +150,5 @@ def index():
 
 
 if __name__ == "__main__":
-    # host=0.0.0.0 lets external access (for Render/Ngrok)
-    app.run(host="0.0.0.0", port=5050, debug=True)
+    port = int(os.environ.get("PORT", 5050))
+    app.run(host="0.0.0.0", port=port, debug=False)
