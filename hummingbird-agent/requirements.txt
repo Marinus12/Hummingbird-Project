@@ -1,0 +1,9 @@
+openai
+pandas
+numpy
+backtrader
+python-dotenv
+flask          # optional: for local tool endpoints
+flask-cors
+matplotlib
+pytest         # for tests

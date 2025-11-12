@@ -1,0 +1,14 @@
+name: hummingbird-research-agent
+description: "Prototype agent that generates strategies, runs backtests with latency penalty, and reports results. PAPER-ONLY."
+tools:
+  - name: strategy-generator
+    description: "Generates candidate strategies from a brief"
+    endpoint: /tools/strategy-generator
+  - name: backtest-runner
+    description: "Runs backtests on CSV market data with latency injection"
+    endpoint: /tools/backtest-runner
+  - name: latency-estimator
+    description: "Estimate ms latency between two endpoints"
+    endpoint: /tools/latency-estimator
+policies:
+  - require_human_approval_for_live_trading: true

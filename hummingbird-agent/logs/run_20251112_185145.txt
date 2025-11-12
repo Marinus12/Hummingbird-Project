@@ -1,0 +1,21 @@
+=== Hummingbird Backtest Report ===
+Timestamp: 2025-11-12 18:51:45.032668
+Origin: New York
+Destination: London
+Latency (ms): 1.55
+
+Results:
+  origin: New York
+  destination: London
+  latency_ms: 1.55
+  route: New York ↔ London
+  distance_km: 0.0
+  one_way_latency_ms: 1.5
+  round_trip_latency_ms: 3.104
+  pnl: 2.23
+  final_equity: 100002.23
+  cash: 99900.33
+  position: 1.0
+  total_trades: 7
+  win_rate: 0.0
+  trades: [{'time': Timestamp('2025-01-01 09:31:00'), 'side': 'buy', 'price': np.float64(100.5), 'size': 1, 'exec_time': Timestamp('2025-01-01 09:31:00.001552'), 'exec_price': 100.51005}, {'time': Timestamp('2025-01-01 09:32:00'), 'side': 'sell', 'price': np.float64(101.2), 'size': 1, 'exec_time': Timestamp('2025-01-01 09:32:00.001552'), 'exec_price': 101.18988}, {'time': Timestamp('2025-01-01 09:32:00'), 'side': 'buy', 'price': np.float64(101.0), 'size': 1, 'exec_time': Timestamp('2025-01-01 09:32:00.001552'), 'exec_price': 101.0101}, {'time': Timestamp('2025-01-01 09:33:00'), 'side': 'sell', 'price': np.float64(101.6), 'size': 1, 'exec_time': Timestamp('2025-01-01 09:33:00.001552'), 'exec_price': 101.58984}, {'time': Timestamp('2025-01-01 09:33:00'), 'side': 'buy', 'price': np.float64(101.2), 'size': 1, 'exec_time': Timestamp('2025-01-01 09:33:00.001552'), 'exec_price': 101.21012}, {'time': Timestamp('2025-01-01 09:34:00'), 'side': 'sell', 'price': np.float64(101.9), 'size': 1, 'exec_time': Timestamp('2025-01-01 09:34:00.001552'), 'exec_price': 101.88981000000001}, {'time': Timestamp('2025-01-01 09:34:00'), 'side': 'buy', 'price': np.float64(101.6), 'size': 1, 'exec_time': Timestamp('2025-01-01 09:34:00.001552'), 'exec_price': 101.61016}]
