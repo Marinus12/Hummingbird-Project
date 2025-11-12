@@ -6,4 +6,6 @@ python-dotenv
 flask          # optional: for local tool endpoints
 flask-cors
 matplotlib
+requests
 pytest         # for tests
+gunicorn
