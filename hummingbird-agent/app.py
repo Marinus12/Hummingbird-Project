@@ -20,14 +20,22 @@ import matplotlib.pyplot as plt
 import random
 
 # Initialize Flask
-app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": ["https://chat.openai.com", "https://hummingbird-agent.onrender.com"]}}, supports_credentials=True)
+CORS(app, origins=[
+    "https://chat.openai.com",
+    "https://hummingbird-agent.onrender.com"
+])
 
 @app.after_request
 def after_request(response):
-    response.headers.add("Access-Control-Allow-Origin", "*")
-    response.headers.add("Access-Control-Allow-Headers", "Content-Type,Authorization")
-    response.headers.add("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS")
+    origin = request.headers.get("Origin")
+    allowed_origins = [
+        "https://chat.openai.com",
+        "https://hummingbird-agent.onrender.com"
+    ]
+    if origin in allowed_origins:
+        response.headers["Access-Control-Allow-Origin"] = origin
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type,Authorization"
+    response.headers["Access-Control-Allow-Methods"] = "GET,PUT,POST,DELETE,OPTIONS"
     return response
 
 # ✅ Utility: Create a chart and return Base64 string
