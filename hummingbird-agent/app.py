@@ -21,7 +21,7 @@ import random
 
 # Initialize Flask
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+CORS(app, resources={r"/*": {"origins": ["https://chat.openai.com", "https://hummingbird-agent.onrender.com"]}}, supports_credentials=True)
 
 @app.after_request
 def after_request(response):
