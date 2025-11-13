@@ -28,11 +28,8 @@ CORS(app, origins=[
 @app.after_request
 def after_request(response):
     origin = request.headers.get("Origin")
-    allowed_origins = [
-        "https://chat.openai.com",
-        "https://hummingbird-agent.onrender.com"
-    ]
-    if origin in allowed_origins:
+    allowed = ["https://chat.openai.com", "https://hummingbird-agent.onrender.com"]
+    if origin in allowed:
         response.headers["Access-Control-Allow-Origin"] = origin
     response.headers["Access-Control-Allow-Headers"] = "Content-Type,Authorization"
     response.headers["Access-Control-Allow-Methods"] = "GET,PUT,POST,DELETE,OPTIONS"
