@@ -20,6 +20,9 @@ import matplotlib.pyplot as plt
 import random
 
 # Initialize Flask
+# Initialize Flask app
+app = Flask(__name__)
+
 CORS(app, origins=[
     "https://chat.openai.com",
     "https://hummingbird-agent.onrender.com"
