@@ -19,7 +19,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import random
 
-# Initialize Flask
+
 # Initialize Flask app
 app = Flask(__name__)
 
@@ -31,12 +31,22 @@ CORS(app, origins=[
 @app.after_request
 def after_request(response):
     origin = request.headers.get("Origin")
-    allowed = ["https://chat.openai.com", "https://hummingbird-agent.onrender.com"]
+    allowed = [
+        "https://chat.openai.com",
+        "https://hummingbird-agent.onrender.com"
+    ]
+
+    # Reset wildcard header if present
+    response.headers.pop("Access-Control-Allow-Origin", None)
+
+    # Add strict allowed origin
     if origin in allowed:
         response.headers["Access-Control-Allow-Origin"] = origin
+
     response.headers["Access-Control-Allow-Headers"] = "Content-Type,Authorization"
     response.headers["Access-Control-Allow-Methods"] = "GET,PUT,POST,DELETE,OPTIONS"
     return response
+
 
 # ✅ Utility: Create a chart and return Base64 string
 def create_backtest_chart(equity_curve, title="Equity Curve"):
